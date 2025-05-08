@@ -12,7 +12,12 @@ import { verifyToken } from "../middleware/verifyToken.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://blogging-frontend-b6yhi1wls.vercel.app/", // replace with your actual frontend URL
+    credentials: true, // this allows cookies to be sent/received
+  })
+);
 
 //connection with db
 connectDb(process.env.MONGO_URI)
@@ -30,12 +35,11 @@ app.use(cookieParser());
 
 //routes
 
-app.get("/test",function(req,res){
+app.get("/test", function (req, res) {
   res.status(200).json({
-    msg:"working successfully"
-  })
-})
-
+    msg: "working successfully",
+  });
+});
 
 app.use("/api/auth", authRoutes);
 
