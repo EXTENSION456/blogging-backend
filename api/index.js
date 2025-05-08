@@ -29,6 +29,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //routes
+
+app.get("/test",function(req,res){
+  res.status(200).json({
+    msg:"working successfully"
+  })
+})
+
+
 app.use("/api/auth", authRoutes);
 
 app.use("/api/blog", verifyToken, blogRoutes);
