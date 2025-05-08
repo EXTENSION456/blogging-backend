@@ -3,7 +3,7 @@
     "rewrites": [
       {
         "source": "/api/:path*",
-        "destination": "https://your-backend-domain.com/api/:path*"
+        "destination": "https://blogging-backend-c4dle02fd.vercel.app/api/:path*"
       }
     ]
   }
