@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://blogging-backend-c4dle02fd.vercel.app", // replace with your actual frontend URL
+    origin: "https://blogging-frontend-blue.vercel.app", // replace with your actual frontend URL
     credentials: true, // this allows cookies to be sent/received
   })
 );
