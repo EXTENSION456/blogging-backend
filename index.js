@@ -47,9 +47,9 @@ app.get("/test", function (req, res) {
   });
 });
 
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
-// app.use("/api/blog", verifyToken, blogRoutes);
+app.use("/api/blog", verifyToken, blogRoutes);
 
 try {
   app.listen(process.env.PORT, () => {
