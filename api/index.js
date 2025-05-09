@@ -19,6 +19,10 @@ app.use(
   })
 );
 
+
+app.options("*", cors());
+
+
 //connection with db
 connectDb(process.env.MONGO_URI)
   .then(function () {
