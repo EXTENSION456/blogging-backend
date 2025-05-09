@@ -4,10 +4,14 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import multer from "multer";
 
-import { connectDb } from "../connectDb.js";
-import authRoutes from "../routes/auth.routes.js";
-import blogRoutes from "../routes/blog.routes.js";
-import { verifyToken } from "../middleware/verifyToken.js";
+// import { connectDb } from "./blogServer/connectDb.js";
+import authRoutes from "./routes/auth.routes.js";
+
+import blogRoutes from "./routes/blog.routes";
+
+import { verifyToken } from "./middleware/verifyToken";
+
+import { connectDb } from "./connectDb.js";
 
 dotenv.config();
 const app = express();
@@ -19,9 +23,7 @@ app.use(
   })
 );
 
-
 app.options("*", cors());
-
 
 //connection with db
 connectDb(process.env.MONGO_URI)
