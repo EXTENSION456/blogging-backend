@@ -51,6 +51,10 @@ app.get("/test", function (req, res) {
 
 // app.use("/api/blog", verifyToken, blogRoutes);
 
-app.listen(process.env.PORT, function () {
-  console.log("Listening on the port", process.env.PORT);
-});
+try {
+  app.listen(process.env.PORT, () => {
+    console.log("Listening on port", process.env.PORT);
+  });
+} catch (err) {
+  console.error("App failed to start due to:", err);
+}
