@@ -19,9 +19,8 @@ router.put("/edit/:id", upload.single("imageUrl"), handleEditBlog);
 router.delete("/delete/:id", handleDeleteBlog);
 
 router.get("/all", handleGetAllBlogs);
+router.get("/", handleGetBlogFromUser);
 
 router.get("/:id", handleGetParticularBlog);
-
-router.get("/", handleGetBlogFromUser);
 
 export default router;
