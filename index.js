@@ -23,7 +23,6 @@ app.use(
   })
 );
 
-
 //connection with db
 connectDb(process.env.MONGO_URI)
   .then(function () {
@@ -51,12 +50,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/blog", verifyToken, blogRoutes);
 
 try {
-  app.listen(, () => {
+  app.listen(process.env.PORT, () => {
     console.log("Listening on port", process.env.PORT);
   });
 } catch (err) {
   console.error("App failed to start due to:", err);
 }
-
-
-process.env.PORT
